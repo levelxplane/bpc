@@ -183,7 +183,7 @@ windower.register_event("action", function(act)
             CONDUIT_ACTIVE = true
 
         elseif pact ~= nil then
-            print(act.actor_id)
+            -- print(act.actor_id)
             if act.actor_id == PLAYER_ID then
                 -- print('player')
                 time_diff = now - LAST_ACTION_TIME

@@ -15,10 +15,10 @@ Counts Blood Pacts. I don't know what else to tell you.
 
 # Commands
 
-`bp show`
+`bpc show`
 
 Shows the number of Blood Pacts/Rages used since loading the addon or reset
 
-`bp reset`
+`bpc reset`
 
 Clears the various counters to start fresh
