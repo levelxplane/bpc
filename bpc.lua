@@ -185,7 +185,7 @@ windower.register_event("action", function(act)
         elseif pact ~= nil then
             print(act.actor_id)
             if act.actor_id == PLAYER_ID then
-                print('player')
+                -- print('player')
                 time_diff = now - LAST_ACTION_TIME
                 LAST_ACTION_TIME = now
 
@@ -198,7 +198,7 @@ windower.register_event("action", function(act)
                     )
                 )
             elseif act.actor_id == PET_ID then
-                print('pet')
+                -- print('pet')
                 time_diff = now - LAST_ACTION_TIME
                 LAST_ACTION_TIME = now
 
