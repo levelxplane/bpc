@@ -8,9 +8,8 @@ Counts Blood Pacts. I don't know what else to tell you.
 
 - Move Windower/addons folder.
 
-- Right Click the ZIP file > Extract All... > C:\Users\YourName\Where\Ever\Windower\Lives\bpc
-
-### (just git rid of the -main at the end, and you should be good)
+- Right Click the ZIP file > Extract All... > `C:\Users\YourName\Where\Ever\Windower\Lives\bpc`
+*(just git rid of the -main at the end, and you should be good)*
 
 - In game, type `//lua l bpc`
 
