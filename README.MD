@@ -6,8 +6,6 @@ Counts Blood Pacts. I don't know what else to tell you.
 
 - Download code as ZIP (Green button, up and to the right of this section.)
 
-- Move Windower/addons folder.
-
 - Right Click the ZIP file > Extract All... > `C:\Users\YourName\Where\Ever\Windower\addons\bpc`
 
 *(just git rid of the -main at the end, and you should be good)*
