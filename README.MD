@@ -8,7 +8,7 @@ Counts Blood Pacts. I don't know what else to tell you.
 
 - Right Click the ZIP file > Extract All... > `C:\Users\YourName\Where\Ever\Windower\addons\bpc`
 
-*(just git rid of the -main at the end, and you should be good)*
+*(just get rid of the -main at the end, and you should be good)*
 
 - In game, type `//lua l bpc`
 
