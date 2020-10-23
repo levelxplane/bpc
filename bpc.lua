@@ -145,7 +145,7 @@ local BLOODPACT_IDS = T{
 windower.register_event("action", function(act)
 
     if act.category == 6 or act.category == 13 then
-        if windower.ffxi.get_player().sub_job ~= 'SMN' then
+        if windower.ffxi.get_player().main_job ~= 'SMN' then
             print('not on smn')
             windower.send_command('lua u bpc')
             return
