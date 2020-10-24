@@ -160,7 +160,7 @@ windower.register_event("action", function(act)
         PET_MOB = windower.ffxi.get_mob_by_index(PLAYER_MOB.pet_index)
         PET_ID = PET_MOB.id
 
-        if act.actor_id ~= PET_ID or act.actor_id ~= PLAYER_ID then
+        if not (act.actor_id == PET_ID or act.actor_id == PLAYER_ID) then
             return
         end
 
