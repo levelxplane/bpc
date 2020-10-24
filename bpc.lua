@@ -227,7 +227,7 @@ windower.register_event("action", function(act)
                 local dmg = action.param
 
                 TOTAL_DAMAGE = TOTAL_DAMAGE + dmg
-                local avg = TOTAL_DAMAGE / RAGE_COUNT
+                local avg = TOTAL_DAMAGE / BP_COUNT
 
                 print (
                     string.format('#%s: %s - delay: %s | dmg: %s | avg: %s',
