@@ -49,6 +49,8 @@ local RAGE_COUNT = 0
 local BP_COUNT = 0
 local CONDUIT_COUNT = 0
 
+local TOTAL_DAMAGE = 0
+
 local BLOODPACT_IDS = T{
     [513] = {id=513,en="Poison Nails",ja="ポイズンネイル",element=6,icon_id=340,mp_cost=11,prefix="/pet",range=2,recast_id=173,targets=32,tp_cost=0,type="BloodPactRage"},
     [516] = {id=516,en="Meteorite",ja="プチメテオ",element=6,icon_id=340,mp_cost=108,prefix="/pet",range=4,recast_id=173,targets=32,tp_cost=0,type="BloodPactRage"},
@@ -194,13 +196,15 @@ windower.register_event("action", function(act)
                 LAST_ACTION_TIME = now
 
                 RAGE_COUNT = RAGE_COUNT + 1
-                print (
-                    string.format('#%s: %s - delay: %s',
-                        tostring(RAGE_COUNT),
-                        'BP: Rage',
-                        tostring(time_diff):sub(1, 4)
-                    )
-                )
+
+
+                -- print (
+                --     string.format('#%s: %s - delay: %s',
+                --         tostring(RAGE_COUNT),
+                --         'BP: Rage',
+                --         tostring(time_diff):sub(1, 4)
+                --     )
+                -- )
             elseif act.actor_id == PET_ID then
                 -- print('pet')
                 time_diff = now - LAST_ACTION_TIME
@@ -213,11 +217,21 @@ windower.register_event("action", function(act)
                 else
                     pact_name = pact.en
                 end
+
+                local targ = act.targets[1]
+                local action = targ.actions[1]
+                local dmg = action.param
+
+                TOTAL_DAMAGE = TOTAL_DAMAGE + dmg
+                local avg = TOTAL_DAMAGE / RAGE_COUNT
+
                 print (
-                    string.format('#%s: %s - delay: %s',
+                    string.format('#%s: %s - delay: %s | dmg: %s | avg: %s',
                         tostring(BP_COUNT),
                         pact_name,
-                        tostring(time_diff):sub(1, 4)
+                        tostring(time_diff):sub(1, 4),
+                        tostring(dmg),
+                        tostring(avg)
                     )
                 )
             end
@@ -236,6 +250,7 @@ windower.register_event('addon command',function (command, ...)
     elseif command == 'show' then
         print('Total Rage/BPs Used:', tostring(RAGE_COUNT), tostring(BP_COUNT))
         print('BPs in AC:', tostring(CONDUIT_COUNT))
+        print('Total Damage:', tostring(TOTAL_DAMAGE))
 
     elseif command == 'reset' then
         BP_COUNT = 0
